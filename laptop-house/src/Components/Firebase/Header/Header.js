@@ -13,6 +13,7 @@ const Header = () => {
                 <CustomLink to='/inventorypage'>Inventory</CustomLink>
                 <CustomLink to='/blogs'>Blogs</CustomLink>
                 <CustomLink to='/login'>Login</CustomLink>
+                <CustomLink to='/aboutus'>About Us</CustomLink>
             </div>
             
         </div>

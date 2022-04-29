@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import AboutUs from './Components/About Us/AboutUs';
 import Blogs from './Components/Blogs/Blogs';
 import Header from './Components/Firebase/Header/Header';
 import Footer from './Components/Footer/Footer';
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/inventorypage' element={<InventoryPage/>}/>
           <Route path='/blogs' element={<Blogs/>}/>
+          <Route path='/aboutus' element={<AboutUs/>}/>
           <Route path='/login' element={<Login/>}/>
      </Routes>
      <Footer></Footer>
