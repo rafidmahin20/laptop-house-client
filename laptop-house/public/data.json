@@ -65,10 +65,18 @@
     },
     {
         "picture": "https://i.ibb.co/cwCTdYn/pic11.png",
-        "quantity": 12,
-        "price": 82898,
+        "quantity": 14,
+        "price": 61898,
         "name": "Iphone 11",
         "supplier_name": "Tim Cook",
-        "short_description": "A13 Bionic chip"
+        "short_description": "A13 Bionic chip 8-core Neural Engine"
+    },
+    {
+        "picture": "https://i.ibb.co/6gLxbsZ/pic13.png",
+        "quantity": 10,
+        "price": 46898,
+        "name": "Watch 6",
+        "supplier_name": "Tim Cook",
+        "short_description": "Always-On Retina display"
     }
   ]
