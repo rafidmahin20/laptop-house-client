@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Blogs from './Components/Blogs/Blogs';
 import Header from './Components/Firebase/Header/Header';
+import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import InventoryPage from './Components/Inventory/InventoryPage';
 import Login from './Components/Login/Login';
@@ -16,6 +17,7 @@ function App() {
           <Route path='/blogs' element={<Blogs/>}/>
           <Route path='/login' element={<Login/>}/>
      </Routes>
+     <Footer></Footer>
     </div>
   );
 }
