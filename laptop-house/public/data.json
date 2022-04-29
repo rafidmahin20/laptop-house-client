@@ -1,0 +1,74 @@
+[
+    {
+      "picture": "https://i.ibb.co/p3Cgjjm/pic5.png",
+      "quantity": 12,
+      "price": 76203,
+      "name": "Mackbook pro",
+      "supplier_name": "Tim Cook",
+      "short_description": "8 core up to 16gb unified memory"
+    },
+    {
+      "picture": "https://i.ibb.co/WsYWSxs/pic12.png",
+      "quantity": 12,
+      "price": 90778,
+      "name": "Iphone 13",
+      "supplier_name": "Tim Cook",
+      "short_description": "6.1 inch super retina xdr display"
+    },
+    {
+      "picture": "https://i.ibb.co/cxzRFgG/pic2.png",
+      "quantity": 12,
+      "price": 118550,
+      "name": "Macbook pro",
+      "supplier_name": "Tim Cook",
+      "short_description": "10 core up 64 gb unified memory"
+    },
+    {
+      "picture": "https://i.ibb.co/pLFRdWT/pic16.png",
+      "quantity": 15,
+      "price": 49369,
+      "name": "Apple Watch",
+      "supplier_name": "Tim Cook",
+      "short_description": "over 50% more screen area than series 3"
+    },
+    {
+      "picture": "https://i.ibb.co/LzWcQv3/pic10.png",
+      "quantity": 16,
+      "price": 75092,
+      "name": "Iphone SE",
+      "supplier_name": "Tim Cook",
+      "short_description": "New 6 core cpu with 2 performance and 4 efficiency cores"
+    },
+    {
+      "picture": "https://i.ibb.co/nLVxkKr/pic15.png",
+      "quantity": 12,
+      "price": 93285,
+      "name": "Airpods",
+      "supplier_name": "Tim Cook",
+      "short_description": "Active noise canellation transparency mode"
+    },
+    {
+      "picture": "https://i.ibb.co/TgGGPgc/pic3.png",
+      "quantity": 12,
+      "price": 82898,
+      "name": "Macbook Air",
+      "supplier_name": "Tim Cook",
+      "short_description": "System On Chip apple m1 chip 8 core cpu"
+    },
+    {
+        "picture": "https://i.ibb.co/7rQxzdm/pic9.png",
+        "quantity": 11,
+        "price": 92898,
+        "name": "Iphone 12 pro max",
+        "supplier_name": "Tim Cook",
+        "short_description": "A14 Bionic chip 6-core CPU with 2 performance and 4 efficiency cores"
+    },
+    {
+        "picture": "https://i.ibb.co/cwCTdYn/pic11.png",
+        "quantity": 12,
+        "price": 82898,
+        "name": "Iphone 11",
+        "supplier_name": "Tim Cook",
+        "short_description": "A13 Bionic chip"
+    }
+  ]
