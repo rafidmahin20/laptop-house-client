@@ -1,0 +1,13 @@
+.footer-heading{
+    font-size: 28px;
+    color: bisque;
+    font-family: 'Times New Roman', Times, serif;
+}
+.footer-info{
+    font-size: 40px;
+    color: bisque;
+    font-family: 'Times New Roman', Times, serif;
+}
+.footer-bg{
+    background-color: #333333;
+}
