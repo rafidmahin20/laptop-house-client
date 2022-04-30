@@ -4,7 +4,7 @@ import CustomLink from '../../CustomLink/CustomLink';
 
 const Header = () => {
     return (
-        <div className='sticky top-0 px-12 py-8 flex justify-center md:justify-between'>
+        <div className='sticky top-0 px-12 py-8 flex justify-center md:justify-between bg-red-300'>
             <div className='hidden md:block'>
                 <Link to='/' className='font-sans font-bold text-4xl text-emerald-700'>Apple Ecosystem</Link>
             </div>

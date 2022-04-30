@@ -10,7 +10,7 @@ const Footer = () => {
             <div className=''>
             <div className='h-full grid grid-cols-1 md:grid-cols-2 footer-bg'>
                 <div className='text-white py-5 px-5'>
-                    <h3 className='footer-heading'>Laptop House</h3>
+                    <h3 className='footer-heading'>Apple Ecosystem</h3>
                     <br/>
                     About us
                     <br/>
