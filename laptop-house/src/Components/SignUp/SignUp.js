@@ -1,12 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import google from '../../Images/social/google.png';
 import auth from '../Firebase/Firebase.init'
 import Loading from '../Loading/Loading';
 
 const SignUp = () => {
     const navigate = useNavigate();
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const navigateToLogin = () => {
         navigate('/login');
     }
@@ -23,6 +24,12 @@ const SignUp = () => {
       if(loading){
           return <Loading/>
       }
+      if(googleUser){
+          navigate('/');
+      }
+      if(googleLoading){
+        return <Loading/>
+    }
 
       const handleSignUp = async event =>{
           event.preventDefault();
@@ -56,7 +63,7 @@ const SignUp = () => {
                 <div className='border border-b-1  border-gray-200 mb-2 w-44 mx-auto mt-3'></div>
             </div>
             <br/>
-            <button  className='flex items-center py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200'>
+            <button onClick={() => signInWithGoogle()} className='flex items-center py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200'>
                 <img style={{ width: "25px", height: "25px" }} src={google} alt="" />
                 <span className=' pl-20'>Continue with Google</span>
             </button>
