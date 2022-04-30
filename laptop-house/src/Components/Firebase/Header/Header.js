@@ -21,6 +21,13 @@ const Header = () => {
                 <CustomLink to='/blogs'>Blogs</CustomLink>
                 <CustomLink to='/aboutus'>About Us</CustomLink>
                 {
+                    user && <>
+                    <CustomLink as={Link} to='/addinventories' className='nav-item px-3 py-2 flex items-center hover:opacity-50 font-semibold text-amber-600 '>Add Items</CustomLink>
+                    <CustomLink as={Link} to='/manageinventories' className='nav-item px-3 py-2 flex items-center hover:opacity-50 font-semibold text-amber-600 '>Manage Items</CustomLink>
+                    <CustomLink as={Link} to='/myitems' className='nav-item px-3 py-2 flex items-center hover:opacity-50 font-semibold text-amber-600 '>My Items</CustomLink>
+                    </>
+                }
+                {
                 user ?
                     <button onClick={handleLogout} className='nav-item px-3 py-2 flex items-center hover:opacity-50 font-semibold text-amber-600 '>Logout</button>
                     :
