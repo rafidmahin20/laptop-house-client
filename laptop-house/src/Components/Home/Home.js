@@ -45,42 +45,61 @@ const Home = () => {
           </button>
         </div>
       </section>
-      <section className="mt-10">
-      <section class="overflow-hidden text-gray-700">
-  <div class="container px-5 py-2 mx-auto lg:pt-24 lg:px-32">
-    <div class="flex flex-wrap -m-1 md:-m-2">
-      <div class="flex flex-wrap w-1/2">
-        <div class="w-1/2 p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="https://i.ibb.co/B204nTf/ivan-bandura-l-ZCHy8-PLyyo-unsplash.jpg"/>
-        </div>
-        <div class="w-1/2 p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="https://i.ibb.co/87zZfXs/daniel-romero-w-VG03-Lw-M86s-unsplash.jpg"/>
-        </div>
-        <div class="w-full p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="https://i.ibb.co/52YzFHd/banner.jpg"/>
-        </div>
-      </div>
-      <div class="flex flex-wrap w-1/2">
-        <div class="w-full p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="https://i.ibb.co/9qq0C9S/blvck-paris-0f-O7-J6-PGW84-unsplash.jpg"/>
-        </div>
-        <div class="w-1/2 p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="https://i.ibb.co/4gqs38Z/simon-hrozian-P7-KF3c-TRKc-E-unsplash.jpg"/>
-        </div>
-        <div class="w-1/2 p-1 md:p-2">
-          <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg"
-            src="https://i.ibb.co/ZLXj2tX/peng-original-L3-N257-Vedu-Q-unsplash.jpg"/>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-      </section>
+        <section className="overflow-hidden text-gray-700 mt-10">
+        <h1 className="text-center text-4xl font-sans font-bold text-cyan-700 pt-10 pb-10">
+          Gallery
+        </h1>
+          <div className="container px-5 py-2 mx-auto lg:pt-24 lg:px-32">
+            <div className="flex flex-wrap -m-1 md:-m-2">
+              <div className="flex flex-wrap w-1/2">
+                <div className="w-1/2 p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block object-cover object-center w-full h-full rounded-lg"
+                    src="https://i.ibb.co/B204nTf/ivan-bandura-l-ZCHy8-PLyyo-unsplash.jpg"
+                  />
+                </div>
+                <div className="w-1/2 p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block object-cover object-center w-full h-full rounded-lg"
+                    src="https://i.ibb.co/87zZfXs/daniel-romero-w-VG03-Lw-M86s-unsplash.jpg"
+                  />
+                </div>
+                <div className="w-full p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block object-cover object-center w-full h-full rounded-lg"
+                    src="https://i.ibb.co/52YzFHd/banner.jpg"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-wrap w-1/2">
+                <div className="w-full p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block object-cover object-center w-full h-full rounded-lg"
+                    src="https://i.ibb.co/9qq0C9S/blvck-paris-0f-O7-J6-PGW84-unsplash.jpg"
+                  />
+                </div>
+                <div className="w-1/2 p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block object-cover object-center w-full h-full rounded-lg"
+                    src="https://i.ibb.co/4gqs38Z/simon-hrozian-P7-KF3c-TRKc-E-unsplash.jpg"
+                  />
+                </div>
+                <div className="w-1/2 p-1 md:p-2">
+                  <img
+                    alt="gallery"
+                    className="block object-cover object-center w-full h-full rounded-lg"
+                    src="https://i.ibb.co/ZLXj2tX/peng-original-L3-N257-Vedu-Q-unsplash.jpg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     </main>
   );
 };
