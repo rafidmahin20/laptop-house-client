@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import { useLocation, useNavigate } from 'react-router-dom';
 import google from '../../Images/social/google.png';
 import auth from '../Firebase/Firebase.init';
+import Loading from '../Loading/Loading';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -25,6 +26,9 @@ const Login = () => {
     }
     if(googleuser){
         navigate('/');
+    }
+    if(googleLoading){
+        return <Loading/>
     }
 
     const handleLogin = event =>{
