@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Inventory = ({product}) => {
     const {_id, name, picture, price, quantity, supplier_name, short_description} = product;
+    const navigateToInventoryId = (`/inventory/inventoryDetails/${_id}`);
     return (
         <div>
         <div className="flex justify-center pb-10">
@@ -30,12 +32,14 @@ const Inventory = ({product}) => {
                 Details: {short_description}
               </p>
             
-             <button
+            <Link to={navigateToInventoryId}>
+            <button 
                 type="button"
                 className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
               >
                 Manage
               </button>
+            </Link>
             </div>
           </div>
         </div>
