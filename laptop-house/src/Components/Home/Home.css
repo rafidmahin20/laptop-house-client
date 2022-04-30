@@ -1,0 +1,7 @@
+.home-img{
+    background-image: url('../../Images/cover2.png');
+    background-repeat: no-repeat;
+    height: 680px;
+    background-size: cover;
+    background-blend-mode: overlay;
+}

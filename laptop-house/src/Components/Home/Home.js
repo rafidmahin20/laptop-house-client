@@ -3,6 +3,7 @@ import pic1 from "../../Images/pic1.jpg";
 import useInventory from "../Hooks/useInventory";
 import Inventory from "../Inventory/Inventory";
 import banner from "../../Images/banner.jpg";
+import './Home.css'
 
 const Home = () => {
   const [products] = useInventory();
@@ -99,6 +100,19 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </section>
+        <section className="mt-20">
+        <div className='mb-56'>
+            <div className='home-img'>
+                <h5 className='text-3xl text-center pt-40 font-bold text-white'>The Best Experiences Only On Apple</h5>
+                <div className='flex items-center w-96 mx-auto mt-4'>
+                    <div className='relative w-full'>
+                        <input type='text' id='simple-search' className='bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-5' placeholder=''/>
+                    </div>
+                    <button type='submit' className='py-2.5 px-7 mt-5 text-sm font-medium text-white bg-blue-700 border border-blue-700 hover:bg-blue-800 rounded-r-md'>Search</button>
+                </div>
+            </div>
+        </div>
         </section>
     </main>
   );
