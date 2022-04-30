@@ -1,8 +1,15 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import CustomLink from '../../CustomLink/CustomLink';
+import auth from '../Firebase.init';
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+    const handleLogout = () =>{
+        signOut(auth);
+    }
     return (
         <div className='sticky top-0 px-12 py-8 flex justify-center md:justify-between bg-red-300'>
             <div className='hidden md:block'>
@@ -13,7 +20,12 @@ const Header = () => {
                 <CustomLink to='/inventorypage'>Inventory</CustomLink>
                 <CustomLink to='/blogs'>Blogs</CustomLink>
                 <CustomLink to='/aboutus'>About Us</CustomLink>
-                <CustomLink to='/login'>Login</CustomLink>
+                {
+                user ?
+                    <button onClick={handleLogout} className='nav-item px-3 py-2 flex items-center hover:opacity-50 font-semibold text-amber-600 '>Logout</button>
+                    :
+                    <CustomLink as={Link} to='/login'>Login</CustomLink>
+                }
             </div>
             
         </div>
