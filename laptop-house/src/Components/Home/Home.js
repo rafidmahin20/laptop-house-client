@@ -2,7 +2,6 @@ import React from "react";
 import pic1 from "../../Images/pic1.jpg";
 import useInventory from "../Hooks/useInventory";
 import Inventory from "../Inventory/Inventory";
-import banner from "../../Images/banner.jpg";
 import './Home.css'
 
 const Home = () => {
