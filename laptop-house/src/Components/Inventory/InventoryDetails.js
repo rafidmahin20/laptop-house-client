@@ -6,7 +6,7 @@ const InventoryDetails = () => {
     const {inventoryId} = useParams();
     const [inventoryDetails] = useInventoryDetails(inventoryId);
     return (
-        <div>
+        <div className='mt-20'>
         <div className="flex justify-center pb-10">
           <div className="rounded-lg shadow-lg bg-white max-w-sm">
             <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
