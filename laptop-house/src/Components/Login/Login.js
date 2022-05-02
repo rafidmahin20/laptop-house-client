@@ -36,7 +36,6 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passRef.current.value;
         signInWithEmailAndPassword(email, password);
-        navigate('/');
     }
     return (
         <div className='flex items-center justify-center mt-20'>
