@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+// import bin from '../../Images/trash-2 9.png'
 
 const ManageInventory = () => {
     const navigate = useNavigate();
@@ -16,6 +17,60 @@ const ManageInventory = () => {
           Add New Items
         </button>
       </div>
+      {/* <div className='flex mt-10 mx-auto ml-10'>
+            <div className="flex mx-auto shadow-md sm:rounded-lg " style={{ height: '100%' }}>
+                <table className="w-full text-sm text-left text-gray-500">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                        <tr>
+                            <th scope="col" className="px-6 py-3">
+                                Name
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Price
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Quantity
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                               Details
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                               Supplier Name
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            items.map(item => <>
+                                <tr key={item._id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                        {item.name}
+                                    </th>
+                                    <td className="px-6 py-4">
+                                        {item.price}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {item.quantity}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {item.short_description}
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        {item.supplier_name}
+                                    </td>
+                                    <td className="px-6 py-4 text-right ">
+                                        <button className=' bg-red-500 w-8 h-8 rounded'><img src={bin} alt="" className="w-6 h-6 flex mx-auto" /></button>
+                                    </td>
+                                </tr>
+                            </>)
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div> */}
     </main>
   );
 };
