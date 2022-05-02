@@ -21,9 +21,15 @@ const Login = () => {
     if(user){
         navigate(from, {replace: true});
     }
+
+    let errorElement;
     const navigateToSignup = () =>{
         navigate('/signup');
     }
+
+    if (error) {
+        errorElement = <p className="text-red-400">Error: {error?.message}</p>;
+      }
     if(googleuser){
         navigate('/');
     }
@@ -56,6 +62,7 @@ const Login = () => {
                     <div className='flex justify-center'>
                     <input type='submit' className="text-white bg-blue-700 font-medium rounded-lg text-sm px-32 py-2.5 text-center mb-3" value="Login" />
                     </div>
+                    {errorElement}
                 </form>
                 <div className='flex items-center '>
                     <div className='border border-b-1  border-gray-200 mb-2 w-44 mx-auto mt-3'></div>
