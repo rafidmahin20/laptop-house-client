@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import bin from '../../Images/trash-2 9.png'
+import useItem from "../Hooks/useItem";
+import bin from '../../Images/trash-2 9.png'
 
 const ManageInventory = () => {
+    const [items, setItems] = useItem();
     const navigate = useNavigate();
     const navigateToAddInventories = () =>{
         navigate('/addinventories');
@@ -17,7 +19,7 @@ const ManageInventory = () => {
           Add New Items
         </button>
       </div>
-      {/* <div className='flex mt-10 mx-auto ml-10'>
+      <div className='flex mt-10 mx-auto ml-10'>
             <div className="flex mx-auto shadow-md sm:rounded-lg " style={{ height: '100%' }}>
                 <table className="w-full text-sm text-left text-gray-500">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50">
@@ -70,7 +72,7 @@ const ManageInventory = () => {
                     </tbody>
                 </table>
             </div>
-        </div> */}
+        </div>
     </main>
   );
 };
