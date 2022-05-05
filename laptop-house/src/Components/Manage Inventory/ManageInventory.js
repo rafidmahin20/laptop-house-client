@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useItem from "../Hooks/useItem";
 import bin from "../../Images/delete.png";
+import { toast } from "react-toastify";
 
 const ManageInventory = () => {
   const [items, setItems] = useItem();
@@ -9,6 +10,21 @@ const ManageInventory = () => {
   const navigateToAddInventories = () => {
     navigate("/addinventories");
   };
+  const handleDelete = id =>{
+    const proceed = window.confirm('You Sure?');
+    if(proceed){
+      const url = `http://localhost:5000/inventorypage/${id}`;
+      fetch(url, {
+        method: 'DELETE'
+      })
+        .then(res => res.json())
+        .then(data =>{
+          toast(data);
+          const remaining = items.filter(item => item._id !== id);
+          setItems(remaining);
+        })
+    }
+  }
   return (
     <main>
       <div className="flex justify-center mt-10">
@@ -62,7 +78,6 @@ const ManageInventory = () => {
                           <img className="h-12 w-12 rounded-full" src={item.picture} alt=""/>
                       </td>
                     <td
-                      scope="row"
                       className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
                     >
                       {item.name}
@@ -72,7 +87,7 @@ const ManageInventory = () => {
                     <td className="px-6 py-4">{item.short_description}</td>
                     <td className="px-6 py-4">{item.supplier_name}</td>
                     <td className="px-6 py-4 text-right ">
-                      <button className=" bg-red-500 w-8 h-8 rounded">
+                      <button onClick={handleDelete} className=" bg-red-500 w-8 h-8 rounded">
                         <img
                           src={bin}
                           alt=""
