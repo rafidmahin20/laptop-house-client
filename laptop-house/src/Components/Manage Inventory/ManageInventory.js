@@ -87,7 +87,7 @@ const ManageInventory = () => {
                     <td className="px-6 py-4">{item.short_description}</td>
                     <td className="px-6 py-4">{item.supplier_name}</td>
                     <td className="px-6 py-4 text-right ">
-                      <button onClick={handleDelete} className=" bg-red-500 w-8 h-8 rounded">
+                      <button onClick={() => handleDelete(item._id)} className=" bg-red-500 w-8 h-8 rounded">
                         <img
                           src={bin}
                           alt=""

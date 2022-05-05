@@ -6,7 +6,7 @@ const useItem = () => {
         fetch('http://localhost:5000/inventorypage')
         .then(res => res.json())
         .then(data => setItems(data));
-    }, [])
+    }, [items])
     return [items];
 };
 
