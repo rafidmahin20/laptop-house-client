@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 const AddInventory = () => {
-    const {handleAdd, register} = useForm();
+    const {handleSubmit, register} = useForm();
     const navigate = useNavigate();
     const onSubmit = data =>{
         const url = `http://localhost:5000/inventorypage`;
@@ -23,7 +23,7 @@ const AddInventory = () => {
         <div className='flex items-center justify-center '>
             <div className='shadow-lg m-10 p-10 sm:w-96 md:w-96 lg:96 2xl:96 rounded border border-zinc-400'>
             <h2 className='text-3xl text-center font-bold mb-6'>Add Item</h2>
-            <form onSubmit={handleAdd(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='mx-auto w-80 mb-5'>
                     <input type='email' name="email" {...register("email")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-black focus:border-black block w-full p-2.5" placeholder='Email' />
                 </div>
