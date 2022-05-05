@@ -1,6 +1,13 @@
 import React from 'react';
+// import { useForm } from 'react-hook-form';
+// import { useNavigate } from 'react-router-dom';
 
 const AddInventory = () => {
+    // const {handleAdd, register} = useForm();
+    // const navigate = useNavigate();
+    // const onSubmit = data =>{
+    //     const url = ``
+    // }
     return (
         <div className='flex items-center justify-center '>
             <div className='shadow-lg m-10 p-10 sm:w-96 md:w-96 lg:96 2xl:96 rounded border border-zinc-400'>
