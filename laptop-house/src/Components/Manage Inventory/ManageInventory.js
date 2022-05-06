@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import useItem from "../Hooks/useItem";
 import bin from "../../Images/delete.png";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 const ManageInventory = () => {
   const [items, setItems] = useItem();
@@ -102,6 +102,7 @@ const ManageInventory = () => {
           </table>
         </div>
       </div>
+      <ToastContainer/>
     </main>
   );
 };
