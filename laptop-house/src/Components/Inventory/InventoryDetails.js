@@ -1,11 +1,39 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import useInventoryDetails from "../Hooks/useInventoryDetails";
 
 const InventoryDetails = () => {
   const navigate = useNavigate()
   const { inventoryId } = useParams();
   const [inventoryDetails] = useInventoryDetails(inventoryId);
+  const handleInventoryDetails = (event) =>{
+    event.preventDefault();
+    let quantity = parseInt(inventoryDetails.quantity)
+    if(event.target.id === 'delivered'){
+      quantity -= 1;
+      toast('one product delivered')
+    }
+    if(event.target.id === 'update'){
+      const updateQuantity = parseInt(event.target.quantity.value)
+      quantity += updateQuantity;
+      event.target.quantity.value = ' ';
+    }
+    const updateUser = {quantity};
+
+    const url = `http://localhost:5000/inventorypage/${inventoryId}`
+    fetch(url, {
+      method: 'put',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(updateUser)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log('success', data);
+      })
+  } 
   const navigateToManageInventory = () =>{
     navigate('/manageinventories');
   }
@@ -34,7 +62,7 @@ const InventoryDetails = () => {
               <h4 className="text-gray-900 text-xl font-medium mb-2">
                 Quantity: {inventoryDetails.quantity}
               </h4>
-              <div className="flex justify-center">
+              <form onSubmit={handleInventoryDetails} className="flex justify-center">
                 <input
                   type="number"
                   className="bg-gray-50 borde border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-black block w-40 h-10 px-3 py-4 mt-4 font-bold"
@@ -48,12 +76,12 @@ const InventoryDetails = () => {
                 >
                   Update
                 </button>
-              </div>
+              </form>
               <h5 className="text-gray-900 text-xl font-medium mb-2">
                 Supplier Name: {inventoryDetails.supplier_name}
               </h5>
 
-              <button
+              <button onClick={handleInventoryDetails}
                 type="button"
                 className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
               >
@@ -70,6 +98,7 @@ const InventoryDetails = () => {
           >
             Manage Inventory
           </button>
+          <ToastContainer/>
         </div>
     </main>
   );
