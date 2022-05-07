@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Inventory = ({product}) => {
-    const {_id, name, picture, price, quantity, supplier_name, short_description} = product;
+    const {_id, name, picture, price, quantity, supplier_name, short_description, sold} = product;
     const navigateToInventoryId = (`/inventory/inventoryDetails/${_id}`);
     return (
         <div>
@@ -27,6 +27,9 @@ const Inventory = ({product}) => {
               </h4>
               <h5 className="text-gray-900 text-xl font-medium mb-2">
                 Supplier Name: {supplier_name}
+              </h5>
+              <h5 className="text-gray-900 text-xl font-medium mb-2">
+                Sold: {sold}
               </h5>
               <p className="text-gray-700 text-base mb-4">
                 Details: {short_description}

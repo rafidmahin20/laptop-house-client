@@ -73,6 +73,9 @@ const InventoryDetails = () => {
                 Price: {inventoryDetails.price}
               </h4>
               <h4 className="text-gray-900 text-xl font-medium mb-2">
+                Sold: {inventoryDetails.sold}
+              </h4>
+              <h4 className="text-gray-900 text-xl font-medium mb-2">
                 Quantity: {inventoryDetails.quantity}
               </h4>
               <form onSubmit={e => handleInventoryDetails(e)} className="flex justify-center" id='update'>
