@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import useItem from "../Hooks/useItem";
 import bin from "../../Images/delete.png";
 import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const ManageInventory = () => {
   const [items, setItems] = useItem();

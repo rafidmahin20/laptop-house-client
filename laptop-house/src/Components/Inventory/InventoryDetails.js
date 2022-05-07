@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import useInventoryDetails from "../Hooks/useInventoryDetails";
+import 'react-toastify/dist/ReactToastify.css';
 
 const InventoryDetails = () => {
   const navigate = useNavigate()
@@ -18,6 +19,7 @@ const InventoryDetails = () => {
       const updateQuantity = parseInt(event.target.quantity.value)
       quantity += updateQuantity;
       event.target.quantity.value = ' ';
+      toast('product updated')
     }
     const updateUser = {quantity};
 
@@ -62,8 +64,10 @@ const InventoryDetails = () => {
               <h4 className="text-gray-900 text-xl font-medium mb-2">
                 Quantity: {inventoryDetails.quantity}
               </h4>
-              <form onSubmit={handleInventoryDetails} className="flex justify-center">
+              <form onSubmit={handleInventoryDetails} className="flex justify-center" id='update'>
                 <input
+                  name="quantity"
+                  id='update'
                   type="number"
                   className="bg-gray-50 borde border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-black block w-40 h-10 px-3 py-4 mt-4 font-bold"
                   placeholder="put number"
@@ -71,6 +75,7 @@ const InventoryDetails = () => {
                 />
                 <br />
                 <button
+                  id='update'
                   type="button"
                   className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 >
@@ -82,6 +87,7 @@ const InventoryDetails = () => {
               </h5>
 
               <button onClick={handleInventoryDetails}
+                id='delivered'
                 type="button"
                 className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
               >
@@ -93,6 +99,7 @@ const InventoryDetails = () => {
       </div>
       <div className="flex justify-center">
           <button onClick={navigateToManageInventory}
+            
             type="button"
             className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
           >
