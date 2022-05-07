@@ -25,7 +25,7 @@ const InventoryDetails = () => {
 
     const url = `http://localhost:5000/inventorypage/${inventoryId}`
     fetch(url, {
-      method: 'put',
+      method: 'PUT',
       headers: {
         'content-type': 'application/json'
       },
