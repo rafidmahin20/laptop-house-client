@@ -10,7 +10,7 @@ const InventoryDetails = () => {
   const [inventoryDetails, setInventoryDetails] = useState({}) 
   const [isUpdated, setIsUpdated] = useState(true)
   useEffect(() => {
-    const url = `http://localhost:5000/inventorypage/${inventoryId}`;
+    const url = `https://protected-sea-98781.herokuapp.com/inventorypage/${inventoryId}`;
         fetch(url)
         .then(res => res.json())
         .then(data => setInventoryDetails(data));
@@ -30,7 +30,7 @@ const InventoryDetails = () => {
     }
     const updateUser = {quantity};
 
-    const url = `http://localhost:5000/inventorypage/${inventoryId}`
+    const url = `https://protected-sea-98781.herokuapp.com/inventorypage/${inventoryId}`
     fetch(url, {
       method: 'PUT',
       headers: {

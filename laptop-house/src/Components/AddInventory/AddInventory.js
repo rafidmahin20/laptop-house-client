@@ -6,7 +6,7 @@ const AddInventory = () => {
     const {handleSubmit, register} = useForm();
     const navigate = useNavigate();
     const onSubmit = data =>{
-        const url = `http://localhost:5000/inventorypage`;
+        const url = `https://protected-sea-98781.herokuapp.com/inventorypage`;
         fetch(url, {
             method: 'POST',
             headers: {
