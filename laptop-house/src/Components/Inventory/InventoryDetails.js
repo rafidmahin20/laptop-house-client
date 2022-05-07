@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import useInventoryDetails from "../Hooks/useInventoryDetails";
 import 'react-toastify/dist/ReactToastify.css';
 
 const InventoryDetails = () => {
@@ -26,7 +25,7 @@ const InventoryDetails = () => {
     if(event.target.id === 'update'){
       const updateQuantity = parseInt(event.target.quantity.value)
       quantity += updateQuantity;
-      event.target.quantity.value = ' ';
+      event.target.quantity.value = '';
       toast('product updated')
     }
     const updateUser = {quantity};
