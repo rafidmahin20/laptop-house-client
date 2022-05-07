@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import useInventoryDetails from "../Hooks/useInventoryDetails";
@@ -7,7 +7,15 @@ import 'react-toastify/dist/ReactToastify.css';
 const InventoryDetails = () => {
   const navigate = useNavigate()
   const { inventoryId } = useParams();
-  const [inventoryDetails] = useInventoryDetails(inventoryId);
+  // const [inventoryDetails] = useInventoryDetails(inventoryId);
+  const [inventoryDetails, setInventoryDetails] = useState({}) 
+  const [isUpdated, setIsUpdated] = useState(true)
+  useEffect(() => {
+    const url = `http://localhost:5000/inventorypage/${inventoryId}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setInventoryDetails(data));
+  }, [inventoryDetails, isUpdated, inventoryId])
   const handleInventoryDetails = (event) =>{
     event.preventDefault();
     let quantity = parseInt(inventoryDetails.quantity)
@@ -34,7 +42,11 @@ const InventoryDetails = () => {
       .then(res => res.json())
       .then(data => {
         console.log('success', data);
+        if(data){
+          setIsUpdated(!isUpdated)
+        }
       })
+
   } 
   const navigateToManageInventory = () =>{
     navigate('/manageinventories');
@@ -64,7 +76,7 @@ const InventoryDetails = () => {
               <h4 className="text-gray-900 text-xl font-medium mb-2">
                 Quantity: {inventoryDetails.quantity}
               </h4>
-              <form onSubmit={handleInventoryDetails} className="flex justify-center" id='update'>
+              <form onSubmit={e => handleInventoryDetails(e)} className="flex justify-center" id='update'>
                 <input
                   name="quantity"
                   id='update'
@@ -76,7 +88,7 @@ const InventoryDetails = () => {
                 <br />
                 <button
                   id='update'
-                  type="button"
+                  type="submit"
                   className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 >
                   Update
