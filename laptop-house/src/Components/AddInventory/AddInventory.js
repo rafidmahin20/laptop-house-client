@@ -34,7 +34,7 @@ const AddInventory = () => {
                     <input type='text' name="picture" {...register("picture")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-black focus:border-black block w-full p-2.5" placeholder='Picture Url' />
                 </div>
                 <div className='mx-auto w-80 mb-5'>
-                    <textarea type='text' name="details" {...register("details")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-black focus:border-black block w-full p-2.5" placeholder='Details' required />
+                    <textarea type='text' name="details" {...register("short_description")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-black focus:border-black block w-full p-2.5" placeholder='Details' required />
                 </div>
                 <div className='mx-auto w-80 mb-5'>
                     <input type='number' name="price" {...register("price")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-black focus:border-black block w-full p-2.5" placeholder='Price' required />
