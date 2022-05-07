@@ -58,6 +58,9 @@ const ManageInventory = () => {
                   Quantity
                 </th>
                 <th scope="col" className="px-6 py-3">
+                  Sold
+                </th>
+                <th scope="col" className="px-6 py-3">
                   Details
                 </th>
                 <th scope="col" className="px-6 py-3">
@@ -85,6 +88,7 @@ const ManageInventory = () => {
                     </td>
                     <td className="px-6 py-4">{item.price}</td>
                     <td className="px-6 py-4">{item.quantity}</td>
+                    <td className="px-6 py-4">{item.sold}</td>
                     <td className="px-6 py-4">{item.short_description}</td>
                     <td className="px-6 py-4">{item.supplier_name}</td>
                     <td className="px-6 py-4 text-right ">
