@@ -24,7 +24,7 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
       const [signInWithGoogle, googleuser, googleLoading, googleError] = useSignInWithGoogle(auth);
     if(user){
-        navigate(from, {replace: true});
+        // navigate(from, {replace: true});
     }
 
     let errorElement;
@@ -50,11 +50,11 @@ const Login = () => {
         toast('Email Sent');
     }
 
-    const handleLogin = event =>{
+    const handleLogin = async event =>{
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passRef.current.value;
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
     }
     return (
         <div className='flex items-center justify-center mt-20'>

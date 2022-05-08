@@ -40,6 +40,9 @@ const AddInventory = () => {
                     <input type='number' name="price" {...register("price")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-black focus:border-black block w-full p-2.5" placeholder='Price' required />
                 </div>
                 <div className='mx-auto w-80 mb-5'>
+                    <input type='number' name="sold" {...register("sold")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-black focus:border-black block w-full p-2.5" placeholder='Sold' required />
+                </div>
+                <div className='mx-auto w-80 mb-5'>
                     <input type='number' name="quantity" {...register("quantity")} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-black focus:border-black block w-full p-2.5" placeholder='Quantity' required />
                 </div>
                 <div className='mx-auto w-80 mb-5'>
