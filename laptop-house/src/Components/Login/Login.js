@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import google from '../../Images/social/google.png';
 import auth from '../Firebase/Firebase.init';
 import Loading from '../Loading/Loading';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -89,6 +90,7 @@ const Login = () => {
                 </button>
                 <div className='text-sm text-center mb-10 mt-4'><p>Don't have an account? <span onClick={navigateToSignup} className='underline text-sky-500 cursor-pointer'>Create an account</span></p></div>
             </div>
+            <ToastContainer/>
         </div>
     );
 };
