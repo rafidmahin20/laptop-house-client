@@ -6,6 +6,7 @@ import google from '../../Images/social/google.png';
 import auth from '../Firebase/Firebase.init';
 import Loading from '../Loading/Loading';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -24,7 +25,7 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
       const [signInWithGoogle, googleuser, googleLoading, googleError] = useSignInWithGoogle(auth);
     if(user){
-        // navigate(from, {replace: true});
+        navigate(from, {replace: true});
     }
 
     let errorElement;
@@ -55,6 +56,8 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passRef.current.value;
         await signInWithEmailAndPassword(email, password);
+        const {data} = await axios.post('https://protected-sea-98781.herokuapp.com/login', {email});
+        console.log(data);
     }
     return (
         <div className='flex items-center justify-center mt-20'>
