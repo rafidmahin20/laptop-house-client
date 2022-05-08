@@ -25,7 +25,7 @@ const Login = () => {
       ] = useSignInWithEmailAndPassword(auth);
       const [signInWithGoogle, googleuser, googleLoading, googleError] = useSignInWithGoogle(auth);
     if(user){
-        navigate(from, {replace: true});
+        // navigate(from, {replace: true});
     }
 
     let errorElement;
@@ -39,7 +39,7 @@ const Login = () => {
     if(googleuser){
         navigate('/');
     }
-    if(googleLoading){
+    if(googleLoading || loading || sending){
         return <Loading/>
     }
 
@@ -56,8 +56,9 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passRef.current.value;
         await signInWithEmailAndPassword(email, password);
-        const {data} = await axios.post('https://protected-sea-98781.herokuapp.com/login', {email});
-        console.log(data);
+        const {data} = await axios.post('https://protected-sea-98781.herokuapp.com/inventorypage', {email});
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, {replace: true});
     }
     return (
         <div className='flex items-center justify-center mt-20'>
