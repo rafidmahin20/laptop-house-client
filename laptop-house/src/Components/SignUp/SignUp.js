@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-fi
 import google from '../../Images/social/google.png';
 import auth from '../Firebase/Firebase.init'
 import Loading from '../Loading/Loading';
+import { sendEmailVerification } from 'firebase/auth';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ const SignUp = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
       if(user){
         navigate('/login');
