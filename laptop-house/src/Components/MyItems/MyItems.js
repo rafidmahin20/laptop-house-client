@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import auth from "../Firebase/Firebase.init";
 import useItem from "../Hooks/useItem";
 import bin from "../../Images/delete.png";
@@ -120,6 +120,7 @@ const MyItems = () => {
           </table>
         </div>
      </div>
+     <ToastContainer/>
     </div>
   );
 };
